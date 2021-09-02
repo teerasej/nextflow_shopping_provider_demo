@@ -11,8 +11,8 @@ class CheckoutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<ProductInCartModel> productsInCart =
-        context.watch<CartNotifier>().checkoutSummary;
-    double total = context.watch<CartNotifier>().total;
+        context.read<CartNotifier>().checkoutSummary;
+    double total = context.read<CartNotifier>().total;
 
     return Scaffold(
       appBar: AppBar(
