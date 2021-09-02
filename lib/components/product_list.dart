@@ -21,6 +21,7 @@ class ProductList extends StatelessWidget {
         return ListTile(
           title: Text(product.name),
           subtitle: Text('${product.price} บาท'),
+          onTap: () {},
         );
       },
       separatorBuilder: (BuildContext context, int index) {
