@@ -1,6 +1,7 @@
 import 'dart:collection';
 
 import 'package:flutter/material.dart';
+import 'package:nextflow_shopping_provider_demo/models/product_in_cart_model.dart';
 import 'package:nextflow_shopping_provider_demo/models/product_model.dart';
 
 class CartNotifier extends ChangeNotifier {
@@ -38,4 +39,13 @@ class CartNotifier extends ChangeNotifier {
     return result;
   }
 
+  double get total {
+    double result = 0;
+
+    for (var product in _shoppingCart) {
+      result += product.price as double;
+    }
+
+    return result;
+  }
 }
