@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nextflow_shopping_provider_demo/components/checkout_button.dart';
+import 'package:nextflow_shopping_provider_demo/components/product_list.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -13,6 +14,7 @@ class HomePage extends StatelessWidget {
           CheckoutButton(),
         ],
       ),
+      body: ProductList(),
     );
   }
 }
