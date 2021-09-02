@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:nextflow_shopping_provider_demo/controllers/cart_notifier.dart';
 import 'package:nextflow_shopping_provider_demo/models/product_model.dart';
+import 'package:provider/provider.dart';
 
 class ProductList extends StatelessWidget {
   ProductList({Key? key}) : super(key: key);
@@ -21,7 +23,9 @@ class ProductList extends StatelessWidget {
         return ListTile(
           title: Text(product.name),
           subtitle: Text('${product.price} บาท'),
-          onTap: () {},
+          onTap: () {
+            context.read<CartNotifier>().addProductToCart(product);
+          },
         );
       },
       separatorBuilder: (BuildContext context, int index) {
