@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:nextflow_shopping_provider_demo/controllers/cart_notifier.dart';
 import 'package:nextflow_shopping_provider_demo/models/product_in_cart_model.dart';
 import 'package:nextflow_shopping_provider_demo/models/product_model.dart';
+
+import 'package:provider/provider.dart';
 
 class CheckoutPage extends StatelessWidget {
   const CheckoutPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    List<ProductInCartModel> productsInCart = [];
-    double total = 0;
+    List<ProductInCartModel> productsInCart =
+        context.watch<CartNotifier>().checkoutSummary;
+    double total = context.watch<CartNotifier>().total;
 
     return Scaffold(
       appBar: AppBar(
