@@ -1,8 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:nextflow_shopping_provider_demo/controllers/cart_notifier.dart';
 import 'package:nextflow_shopping_provider_demo/home_page.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) {
+            return CartNotifier();
+          },
+        )
+      ],
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
